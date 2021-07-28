@@ -1,0 +1,27 @@
+.vertical-row {
+    display: flex;
+}
+
+.square {
+    width: 1vw;
+    height: 1vw;
+    border: 1px solid grey;
+}
+
+.colorPickerTemplate {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    z-index: 99;
+    background-color: white;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+
+    .big-square {
+        width: 3vw;
+        height: 3vw;
+        margin: 5px;
+        border: 1px solid lightgrey;
+        border-radius: 5px;
+    }
+}

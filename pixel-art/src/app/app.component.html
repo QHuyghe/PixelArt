@@ -1,0 +1,24 @@
+<div class="vertical-row" *ngFor="let row of god">
+  <div class="square" 
+      (click)="updateColor(box)"
+      (mousedown)="cursorDragging = true; false"
+      (mouseup)="cursorDragging = false; false"
+      (mouseenter)="updateColorDragging(box)"
+      (contextmenu)="showContextMenu($event); false"
+      *ngFor="let box of row.squares" 
+      [style.background]="box.color">
+  </div>
+</div>
+
+
+<div #colorPickerTemplate 
+  class="colorPickerTemplate"
+  (mouseleave)="hideContextMenu();"
+  [ngStyle]="{'left.px': contextX, 'top.px': contextY}"
+  *ngIf="displayContextMenu">
+  <div class="big-square" 
+      [ngStyle]="{'background': color}"
+      *ngFor="let color of availableColors"
+      (click)="setActiveColor(color)">
+  </div>
+</div>
